@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="cc" v-bind:disabled="ss">我的ss值为false，依然可以看到我</div>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var app3=new Vue({
+			el:'#cc',
+			data:{
+				ss:false
+			}
+		}) 
+	//data里面无数据绑定，disabled默认为false值，一旦ss绑定了任意值，包括false，diabled的值就会变为true，所以当前文字可以显示
+</script>
+</html>

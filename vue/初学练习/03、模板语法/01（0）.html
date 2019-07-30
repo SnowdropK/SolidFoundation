@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<span id="cc" v-once>sdas{{message}}</span>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var app01=new Vue({
+		el:'#cc',
+		data:{
+			message:'我iehf'
+		}
+	})
+	//并没有感受到v-once有什么用
+</script>
+</html>

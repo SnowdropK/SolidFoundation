@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var data={
+		a:1,
+		b:'dsdf',
+		c:true,
+		d:[1,2,3]
+	}
+	var vm=new Vue({
+		data:data
+	})
+	console.log(vm.a==data.a)
+	//假如19行为data2:data，则vm.a==data.a的值为false，为data:data就是true。原理有待深究。
+	console.log(vm.a===data.a)
+	console.log(vm.a)
+	console.log(data.a)
+	console.log(vm.b)//b在下面定义，这里输出dsdf
+
+	vm.a=2
+	console.log(vm.a)
+	console.log(data.a)
+	vm.b = 'hi'//直接增加新元素
+	console.log(vm.b)
+</script>
+</html>

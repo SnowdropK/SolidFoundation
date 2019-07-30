@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="example">
+		<p>1、{{message}}</p>
+		<p>2、{{reversemessage()}}</p>
+		<p>3、{{reversemessage2}}</p>
+		<p>4、{{reversemessage()}}</p>
+	</div>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var app04=new Vue({
+		el:'#example',
+		data:{
+			message:'哇嘎天狗'
+		},
+		methods:{
+			reversemessage:function(){
+				this.message=this.message.split("").reverse().join("")
+				return this.message
+			}
+		},
+		computed:{
+			reversemessage2:function(){
+				return this.message.split("").reverse().join("")
+			}
+		}
+	})
+	//这个我把官方案例转变了一下，加深了理解
+	//methods和computed一个是方法，一个是数据缓存
+</script>
+</html>

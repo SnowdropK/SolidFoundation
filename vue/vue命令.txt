@@ -1,0 +1,11 @@
+# ×îĞÂÎÈ¶¨°æ
+$ npm install vue
+npm uninstall vue
+
+npm install vue@2.5.1 -s
+
+npm uninstall vue-cli -g
+
+http://www.cnblogs.com/vsmart/p/7560794.html
+
+npm install github:dfgfdgfdg -S£¨sÅäÖÃpackage£©

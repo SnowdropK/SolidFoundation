@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="cc">
+		<input v-model.lazy="message">
+		<p>{{message}}</p>
+		<input v-model.number="age" type="number">
+		<input v-model.trim="msg">
+		<p>{{msg}}</p>
+	</div>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var vm=new Vue({
+		el:'#cc',
+		data:{
+			message:'',
+			age:'',
+			msg:''
+		}
+	})
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button type="button" onclick="testsound()">语音播报</button>
+	<button type="button" onclick="recogsound()">语音识别</button>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var cc=new Vue({
+		data:{
+			a:1
+		},
+		created:function(){
+			console.log(this.a)
+		}
+		//一定要created，其他名字没有效果
+		//钩子的 this 指向调用它的 Vue 实例
+	})
+	function testsound(){
+		alert(1);
+		var allsound = speechSynthesis.getVoices();
+		var utterThis = new window.SpeechSynthesisUtterance('我宇智波胖虎真是帅！');
+		window.speechSynthesis.speak(utterThis);
+		console.log(allsound);
+	}
+	function recogsound(){
+		var newRecognition = webkitSpeechRecognition();
+		newRecognition.continuous = true;
+		newRecognition.onresult = function(event) { 
+    		console.log(event);
+		}
+	}
+</script>
+</html>

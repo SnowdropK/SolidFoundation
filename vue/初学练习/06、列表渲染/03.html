@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="cc">
+		<li v-for="n in countnumbers">{{n}}</li>
+	</ul>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var vm=new Vue({
+		el:'#cc',
+		data:{
+			numbers:[1,2,3,4,5]
+		},
+		computed:{
+			countnumbers:function(){
+				return this.numbers.filter(function(number){
+					return number %2===0
+				})
+			}
+		}
+	})
+</script>
+</html>

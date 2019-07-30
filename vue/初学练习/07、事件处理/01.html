@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="example-2">
+  <!-- `greet` 是在下面定义的方法名 -->
+  <button v-on:click="greet">Greet</button>
+</div>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+var example2 = new Vue({
+  el: '#example-2',
+  data: {
+    name: 'Vue.js'
+  },
+  methods: {
+    greet: function (event) {//event不加也能运行成功，event主要是在点击按钮后，if之后的条件语句才能成功调用，hello这部分网页刷新后，调用greet()方法
+      alert('Hello ' + this.name + '!')
+      if (event) {
+        alert(event.target.tagName)
+      }
+    }
+  }
+})
+example2.greet() 
+</script>
+</html>

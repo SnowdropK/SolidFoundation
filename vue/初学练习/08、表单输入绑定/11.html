@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<select v-model="selected" >
+	  <option v-bind:value="{ number: 123 }">123</option>
+	</select>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var vm=new Vue({
+		el:'select',
+		data:{
+			selected:''
+		}
+	})
+</script>
+</html>

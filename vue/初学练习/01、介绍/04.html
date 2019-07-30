@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app_4">
+		<ol>
+			<li v-for="todo in chenArr">
+				console.log({{todo.text}})
+			</li>
+		</ol>
+	</div>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var app_4=new Vue({
+		el:'#app_4',
+		data:{
+			chenArr:[
+				{text:'哈哈哈'},
+				{text:'呵呵呵'},
+				{text:'嘿嘿嘿'}
+			]
+		}
+	})
+	app_4.chenArr.push({ text: '新项目' });
+</script>
+</html>

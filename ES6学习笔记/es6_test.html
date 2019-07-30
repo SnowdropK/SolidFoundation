@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+	<script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+	<script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+	<script type="module">
+function f() { console.log('I am outside!'); }
+
+(function () {
+  if (true) {
+    // 重复声明一次函数f
+    function f() { console.log('I am inside!'); }
+  }
+
+  f();
+}());
+	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

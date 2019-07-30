@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app_3">
+		<p v-if="seen">看见我了吗</p>
+	</div>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+ var app_3=new Vue({
+ 	el:'#app_3',
+ 	data:{
+ 		seen:false
+ 		//打上分号神奇地变成true，明明是false值，竟然可以看到了
+ 	}
+ })
+ app_3.seen=true;
+ //打上分号，并且data里没有seen，文字会一闪而逝
+</script>
+</html>

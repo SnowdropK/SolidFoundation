@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+<div id="app">
+	<p>
+		<router-link to='/Home/110'>home/110</router-link><br>
+		<router-link to='/Home'>home控制多个router-view</router-link><br>
+		<router-link to="{path: '/Home/${sid}'}"> home/$id</router-link><br>
+		<router-link :to="{ name: 'users', params: {userId: 123 }}">通过params传参User</router-link><br>
+		<router-link :to="{ name: 'users', query: {userId: 123, username: 'admin',password: '123456' }}">通过query传参User多个参数</router-link><br>
+		<router-link to='/About/110'>重定向到users</router-link><br>
+	</p>
+	<p>
+		<router-link to='/tem1/110'>tem1/props字符</router-link><br>
+		<router-link to='/tem2/'>tem2/props对象</router-link><br>
+	</p>
+	<!-- 使用动态的 transition name -->
+<transition :name="transitionName">
+	<router-view class='view one'></router-view>
+</transition>
+	<router-view class='view two' name='a'></router-view>
+	<router-view class='view three' name='b'></router-view>
+</div>
+
+
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<script>
+
+  const Home = {template: '<div>home</div>'}
+  const About = {template: '<div>about</div>'}
+  const Users = {
+    template: '<div><h2>Users  {{$route.params.userId}} </h2><router-view></router-view></div>'
+  }
+  const User = {
+    template: '<div>{{$route.params.username }}</div>'
+  }
+  
+// ------------------------------------
+
+  const tem1 = {props: ['aid'], template: '<div>tem1{{ aid }}</div>'}
+  const tem2 = {template: '<div>tem2</div>'}
+
+  const router = new VueRouter({
+    routes: [
+      {
+        path: '/Home/:id',
+        name: 'home',
+        component: Home
+      },
+      {
+        path: '/Home',
+        name: 'home',
+        components: {default: Home, a: About, b: Users}
+      },
+      {
+        path: '/About/:cid',
+        name: 'about',
+        redirect: '/Users'
+      },
+      {
+        path: '/users',
+        name: 'users',
+        component: Users,
+        children: [
+          {
+            path: 'user',
+            name: 'user',
+            component: User            
+          }
+        ]
+      },
+      {
+  		path: '/tem1/:aid',
+        name: 'tem1',
+        component: tem1, props: true
+  	  }
+    ]
+  })
+
+
+  //--------------------------
+  
+  new Vue({
+  	data: function(){
+  		sid: 110
+  	},
+  	router,
+  	  watch: {
+		'$route' (to, from) {
+		   const toDepth = to.path.split('/').length
+		   const fromDepth = from.path.split('/').length
+		   this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+		   }
+		}
+  }).$mount('#app')
+</script>
+
+</body>
+</html>

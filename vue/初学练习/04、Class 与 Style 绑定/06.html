@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="cc" v-bind:style="[style1,style2]">哇嘎天狗</div>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var vm=new Vue({
+		el:'.cc',
+		data:{
+			style1:{
+				border:'1px solid red',
+				width:'100px',
+				height:'100px',
+			},
+			style2:{
+				fontSize:'18px',
+				color:'blue'
+			}
+		}
+	})
+</script>
+</html>

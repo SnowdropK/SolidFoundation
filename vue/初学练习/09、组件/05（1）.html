@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<child message="hello!"></child>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	Vue.component('child', {
+	  props: ['message'],
+	  template: '<span>{{ message }}</span>'
+	})
+	var vm=new Vue({
+		el:'child'
+	})
+	//不管怎样，vue对象里一定要绑定节点
+</script>
+</html>

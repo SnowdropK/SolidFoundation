@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="cc">{{fullName}}</div>
+</body>
+
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var vm=new Vue({
+		el:'#cc',
+		data:{
+			firstName:"Xia",
+			lastName:"an"
+		},
+		computed:{
+			fullName:{
+				get:function(){
+					return this.firstName+''+this.lastName
+				},
+				set:function(newValue){
+					var names=newValue.split(" ")
+					this.firstName=names[0]
+					this.lastName=names[names.length-1]
+				}
+			}
+		}
+	})
+	vm.fullName = 'Chen Xia'
+</script>
+</html>

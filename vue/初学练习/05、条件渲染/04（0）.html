@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<template id="cc" v-if="ok">
+	  <h1>Title</h1>
+	  <p>Paragraph 1</p>
+	  <p>Paragraph 2</p>
+	</template>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var vm=new Vue({
+		el:'#cc',
+		data:{
+			loginType:'username'
+		}
+	})
+</script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 方法一：用ID绑定元素 -->
+	<ul id="cc">
+		<li v-for="(item2,index) in items">
+			{{parentmessage}}-{{index}}-{{item2.message}}
+		</li>
+	</ul>
+	<ul id="dd">
+		<li v-for="(value2,key,index) in object">
+			{{index}}:{{key}}:{{value2}}
+		</li>
+	</ul>
+<!-- 方法二：用class绑定元素 这种方法只能遍历第一个class，第二个class遍历不出 -->
+	<ul class="bb">
+		<li v-for="(item2,index) in items">
+			{{parentmessage}}-{{index}}-{{item2.message}}
+		</li>
+	</ul>
+	<ul class="bb">
+		<li v-for="(value2,key) in object">
+			{{key}}:{{value2}}
+		</li>
+	</ul>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var vm=new Vue({
+		el:'#cc',
+		data:{
+			parentmessage:'hhahaa',
+			items:[
+			{message:'Chen'},{message:'Xia'}
+			]
+			//el元素的id最好绑定在父元素上，子元素再进行遍历
+			//存在问题，怎么绑定多个元素
+			
+		}
+	})
+	var vm2=new Vue({
+		el:'#dd',
+		data:{
+			object:{
+				Firstname:'Chen',
+				lastName:'Xia',
+				age:21
+			}
+		}
+	})
+
+	var vm3=new Vue({
+		el:'.bb',
+		data:{
+			parentmessage:'hhahaa',
+			items:[
+			{message:'Chen'},{message:'Xia'}
+			],
+			object:{
+				Firstname:'Chen',
+				lastName:'Xia',
+				age:21
+			}
+		}
+	})
+
+
+</script>
+</html>

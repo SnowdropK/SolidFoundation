@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="cc" v-html="rawHtml"></div>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var app2=new Vue({
+		el:'#cc',
+		data:{
+			rawHtml:'<li>哇嘎天狗</li>',
+		}
+	}) 
+</script>
+</html>

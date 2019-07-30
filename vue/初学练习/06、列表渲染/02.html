@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="cc">
+		<li v-for="value in person">
+			{{value}}
+		</li>
+	</ul>
+	<!-- 只能用ul li试了div好像无法遍历 -->
+</body>
+
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var vm=new Vue({
+		el:'#cc',
+		data:{
+			person:{
+				name:'chenxia'
+			}
+			
+		}
+	})
+	Vue.set(vm.person,'age',21)
+</script>
+</html>

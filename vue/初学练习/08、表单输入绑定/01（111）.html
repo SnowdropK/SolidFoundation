@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="a8">
+		<input v-model='message' placeholder="edit me">
+		<p>Message is: {{message}}</p>
+	</div>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var vm=new Vue({
+		el:'#a8',
+		data:{
+			message:''
+		}
+	})
+	//一开始el获取的是P元素，但是input输入的文字无法传入p中。因此要在外面再包一层div，el获取div的id。这样input和p都可以存在vm有效的范围内。
+</script>
+</html>

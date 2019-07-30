@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="example-2">
+	  <simple-counter></simple-counter>
+	  <simple-counter></simple-counter>
+	  <simple-counter></simple-counter>
+	</div>
+</body>
+
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var data = { counter: 0 }
+	Vue.component('simple-counter', {
+	  template: '<button v-on:click="counter += 1">{{ counter }}</button>',
+	  data: function () {
+	    return data
+	  }
+	})
+	new Vue({
+	  el: '#example-2'
+	})
+</script>
+</html>

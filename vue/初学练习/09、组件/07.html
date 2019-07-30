@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="cc">
+		<my-vue v-on:click.native="doTheThing"></my-vue>
+	</div>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+Vue.component('my-vue',{
+	template:'<div>fsdfsdsfs</div>'
+})
+var vm=new Vue({
+	el:'#cc',
+	data:{
+		doTheThing:''
+	},
+	methods:{
+		doTheThing:function(){
+			alert(1)
+		}
+	}
+})
+//顺序不能换
+</script>
+</html>

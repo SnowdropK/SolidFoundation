@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="radio" v-model="pick" v-bind:value="a">
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+var vm=new Vue({
+	el:'input',
+	data:{
+		pick:'',
+		a:''
+	}
+})
+vm.pick === vm.a
+</script>
+</html>

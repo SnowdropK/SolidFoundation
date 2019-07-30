@@ -1,0 +1,3 @@
+饿了么vue组件：http://element-cn.eleme.io/#/zh-CN/component/checkbox
+vue-validator，前端表单验证，https://github.com/kazupon/vue-validator
+vue-validator文档：https://github.com/kazupon/vue-validator/tree/2.x/docs/zh-cn

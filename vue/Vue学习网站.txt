@@ -1,0 +1,4 @@
+vue外文视频：https://www.udemy.com/vuejs-2-the-complete-guide/
+js群月报：https://www.kancloud.cn/jsfront/month/438655
+es6阮一峰：http://es6.ruanyifeng.com/#docs/let#块级作用域
+vue优秀学习博客：http://www.cnblogs.com/nzbin/p/6363827.html

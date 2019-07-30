@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<div class="cc" v-bind:class="[{active:isActive },errorClass]"></div>
+</body>
+<script src="src/vue.min.js"></script>
+<script type="text/javascript">
+	var vm=new Vue({
+		el:'.cc',
+		data:{
+			isActive :false,
+			errorClass:'text-danger'S
+		}
+	})
+</script>
+</html>
